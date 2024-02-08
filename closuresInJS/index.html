@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closures In </title>
+</head>
+<body>
+    
+</body>
+<script>
+    function createCounter() {
+    let count = 0;  // a variable in the outer scope
+
+    function increment() {  // a nested function
+        count++;  // accessing outer scope variable
+        console.log(count);
+    }
+
+    return increment;  // returning the nested function
+}
+
+let counter = createCounter(); // store the returned function in a variable
+counter();  // Output: 1
+counter();  // Output: 2
+
+</script>
+</html>

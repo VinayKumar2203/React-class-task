@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click Event Handler Example</title>
+</head>
+
+<body>
+    <h1>function </h1>
+    <div id="root"></div>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script type="text/babel">
+        function Greet({ name,text }) {
+            return (
+                <>
+                    <h1>{name},{text}</h1>
+                </>
+            );
+        }
+
+        function App() {
+            return (
+                <div>
+
+                    <Greet name="vinay" text="message" />
+                    <Greet name="neha" text="card" />
+                </div>
+            );
+        }
+        const reactRoot = ReactDOM.createRoot(document.getElementById("root"))
+        reactRoot.render(<App />)
+
+    </script>
+</body>
+
+</html>
