@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click Event Handler Example</title>
+</head>
+
+<body>
+    <h1>child and props</h1>
+    <div id="root"></div>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script type="text/babel">
+
+        function Header({ children }) {
+            return (
+                <>
+                    <h1>{children}</h1>
+                </>
+            )
+        }
+        function Main({ children }) {
+            return (
+                <>
+                    <h1>{children}</h1>
+                </>
+            )
+        }
+        function Footer({ children }) {
+            return (
+                <div>
+                    {children}
+                </div>
+            )
+        }
+
+
+
+        function App() {
+            return (
+                <>
+                    <Header children="vinay" />
+                    <Main children="neha" />
+                    <Footer children="both are great partner" />
+                    <Footer>
+                        <h1>hello</h1>
+                    </Footer>
+                </>
+
+            );
+        }
+        const reactRoot = ReactDOM.createRoot(document.getElementById("root"))
+        reactRoot.render(<App />)
+
+    </script>
+</body>
+
+</html>
