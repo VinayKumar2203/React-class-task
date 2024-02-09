@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Template</title>
+    <style>
+        #navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: aquamarine;
+
+        }
+
+        .logo img {
+            width: 50;
+            height: 50px;
+        }
+
+        .navList {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+        }
+
+        .navList a {
+            margin: 5%;
+            font-weight: 600;
+        }
+
+        #footer {
+            background-color: rgb(249, 103, 103);
+            color: rgb(142, 240, 240);
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: xx-large;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root">
+    </div>
+</body>
+<script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+<script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    // My Code goess here;
+
+    function Navbar() {
+        return (
+            <div id="navbar">
+                <div className="logo">
+                    <img src="https://www.bing.com/th?id=OIP.1d6tBbNiJTFQNEK_k0sSjQHaFj&w=133&h=100&c=8&rs=1&qlt=90&o=6&dpr=1.4&pid=3.1&rm=2" alt="" />
+                </div>
+                <div className="navList">
+                    <a href="#">home</a>
+                    <a href="#">about</a>
+                    <a href="#">login</a>
+                    <a href="#">log out</a>
+                </div>
+            </div>
+        )
+    }
+
+
+
+
+    function Main() {
+        return (
+            <main>
+                <Sidebar />
+                <ProductsContainer />
+            </main>
+        )
+    }
+    function Sidebar() {
+        return (
+            <aside className="sidebar">
+                <MenuItem text="home" />
+                <MenuItem text="Explore" />
+                <MenuItem text="categories" />
+            </aside>
+        )
+    }
+    function MenuItem({text}) {
+        return (
+                <p>{text}</p>
+        )
+    }
+    function ProductsContainer() {
+        return (
+            <>
+                <ProductItem name="neha" price="10"/>
+                <ProductItem name="vinay" price="20"/>
+                <ProductItem name="viha" price="30"/>
+            </>
+        )
+    }
+    function ProductItem({ name, price }) {
+        return (
+            <>
+                <img src="" alt={name} />
+                <h2>{name}</h2>
+                <p>{price}</p>
+            </>
+        )
+    }
+
+    function Footer() {
+        return (
+            <div id="footer">
+                <a href="#">link1</a>
+                <a href="#">link3</a>
+                <a href="#">link2</a>
+            </div>
+        )
+    }
+
+    function App() {
+
+        return (
+            <div id="container" className="main">
+                <Navbar />
+                <Main />
+                <Footer />
+            </div>
+        )
+    }
+
+    let rootElement = document.getElementById("root")
+    let createElement = ReactDOM.createRoot(rootElement)
+    createElement.render(<App />)
+</script>
+
+</html>
