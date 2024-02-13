@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>react-10 | example-2</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script type="text/babel">
+        function Increment() {
+            const [count, setCount] = React.useState(3000);
+            let handleDecrease = () => {
+                setCount(count - 1)
+            }
+            return (
+                <div>
+                    <h3>button type is  {count} times</h3>
+                    <button onClick={() => setCount((count)*2)}>increment</button>
+                    <button onClick={handleDecrease}>decrement</button>
+                </div>
+            )
+        }
+        function App() {
+            return (
+                <>
+                    <p>Baburao's bank balance duble amount in 25 days</p>
+                    <Increment />
+                </>
+            )
+        }
+
+        const reactRoot = ReactDOM.createRoot(document.getElementById("root"));
+        reactRoot.render(<App />);
+    </script>
+</body>
+
+</html>
